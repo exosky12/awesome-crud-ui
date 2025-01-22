@@ -40,6 +40,10 @@ export const Home = () => {
 		id: string,
 		updatedData: { name: string; description: string }
 	) => {
+		if (!updatedData.name) {
+			toast.error("Name is required");
+			return;
+		}
 		try {
 			await projectService.update(id, updatedData);
 			await fetchProjects();

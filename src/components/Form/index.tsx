@@ -5,7 +5,7 @@ import { Button } from "../Button";
 import toast from "react-hot-toast";
 
 type FormProps = {
-	onSubmit: (formData: ProjectData) => void;
+	onSubmit: (formData: ProjectData) => Promise<void>;
 };
 
 export const Form = ({ onSubmit }: FormProps) => {
@@ -13,13 +13,12 @@ export const Form = ({ onSubmit }: FormProps) => {
 		name: "",
 		description: "",
 	});
-	const [loading, setLoading] = useState<boolean>(false);
+	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 
 	useEffect(() => {
 		if (error) {
 			toast.error(error);
-			setError(null);
 		}
 	}, [error]);
 
@@ -27,16 +26,16 @@ export const Form = ({ onSubmit }: FormProps) => {
 		e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
 	) => {
 		const { name, value } = e.target;
-		setFormData({
-			...formData,
-			[name]: value,
-		});
+
+		if (name in formData) {
+			setFormData((prev) => ({ ...prev, [name]: value }));
+		}
 	};
 
 	const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault();
 
-		if (!formData.name) {
+		if (!formData.name.trim()) {
 			setError("Project name is required");
 			return;
 		}
@@ -44,7 +43,7 @@ export const Form = ({ onSubmit }: FormProps) => {
 		setLoading(true);
 
 		try {
-			onSubmit(formData);
+			await onSubmit(formData);
 			setFormData({ name: "", description: "" });
 			toast.success("Project added successfully");
 		} catch (error) {

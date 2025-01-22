@@ -1,10 +1,10 @@
+import { ProjectData } from './../types';
 import { useState, useCallback } from "react";
 import { projectService } from "../services/api";
-import { Project } from "../types";
 import toast from "react-hot-toast";
 
 export const useProjects = () => {
-	const [projects, setProjects] = useState<Project[]>([]);
+	const [projects, setProjects] = useState<ProjectData[]>([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
 

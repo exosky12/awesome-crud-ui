@@ -17,7 +17,7 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
 						e.stopPropagation();
 						onClose();
 					}}
-					className="absolute text-gray-600 top-2 right-2"
+					className="absolute text-2xl text-red-500 -top-2 right-2"
 				>
 					X
 				</button>
