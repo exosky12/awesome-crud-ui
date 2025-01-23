@@ -50,13 +50,11 @@ cd basic-crud-exercise
 
 ```bash
 pnpm install
-pnpm db:push
 ```
 
 5. **Créer la db** :
 
 ```bash
-pnpm install
 pnpm db:push
 ```
 
