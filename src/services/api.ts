@@ -1,4 +1,4 @@
-import type { ProjectData } from "../types";
+import type { ProjectData } from "@/types";
 
 const API_URL = "http://localhost:4000/api/v1";
 

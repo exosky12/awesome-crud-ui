@@ -1,11 +1,13 @@
-import { ArrowLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Button } from "../components/Button";
-import { projectService } from "../services/api";
-import type { ProjectData } from "../types";
+
+import { projectService } from "@/services/api";
+import type { ProjectData } from "@/types";
+
 import toast from "react-hot-toast";
-import { ProjectCard } from "../components/ProjectCard";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/Button";
+import { ProjectCard } from "@/components/ProjectCard";
 
 export const Project = () => {
 	const { id } = useParams();

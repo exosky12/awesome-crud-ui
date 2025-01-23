@@ -1,6 +1,8 @@
-import { ProjectData } from './../types';
 import { useState, useCallback } from "react";
-import { projectService } from "../services/api";
+
+import { ProjectData } from "@/types";
+import { projectService } from "@/services/api";
+
 import toast from "react-hot-toast";
 
 export const useProjects = () => {
@@ -13,7 +15,7 @@ export const useProjects = () => {
 			setLoading(true);
 			const data = await projectService.getAll();
 			setProjects(data.data);
-        } catch (err) {
+		} catch (err) {
 			const message =
 				err instanceof Error ? err.message : "An unknown error occurred";
 			setError(message);

@@ -1,8 +1,10 @@
 import { useState, ChangeEvent, FormEvent, useEffect } from "react";
-import { Plus } from "lucide-react";
-import type { ProjectData } from "../../types";
-import { Button } from "../Button";
+
+import type { ProjectData } from "@/types";
+
 import toast from "react-hot-toast";
+import { Plus } from "lucide-react";
+import { Button } from "@/components/Button";
 
 type FormProps = {
 	onSubmit: (formData: ProjectData) => Promise<void>;

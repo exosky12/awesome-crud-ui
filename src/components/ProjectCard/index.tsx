@@ -1,8 +1,10 @@
-import { Trash, Edit, Save } from "lucide-react";
-import { ProjectData } from "../../types";
 import { useState, useEffect } from "react";
-import { Modal } from "../Modal";
-import { Button } from "../Button";
+
+import { ProjectData } from "@/types";
+
+import { Trash, Edit, Save } from "lucide-react";
+import { Modal } from "@/components/Modal";
+import { Button } from "@/components/Button";
 
 type ProjectCardProps = {
 	project: ProjectData;
@@ -39,7 +41,7 @@ export const ProjectCard = ({
 	return (
 		<div
 			className="flex w-full cursor-pointer flex-col p-4 bg-[#070F27] rounded-lg border border-[#707070]"
-			onClick={onClick}
+			onClick={isEditing ? undefined : onClick}
 		>
 			<div>
 				<h3 className="text-xl">{project.name}</h3>
@@ -68,7 +70,7 @@ export const ProjectCard = ({
 			</div>
 
 			<Modal isOpen={isEditing} onClose={() => setIsEditing(false)}>
-				<div>
+				<div onClick={(e) => e.stopPropagation()}>
 					<input
 						type="text"
 						value={name}

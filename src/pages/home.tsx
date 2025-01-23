@@ -1,13 +1,15 @@
-import { Rocket } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Button } from "../components/Button";
-import { Form } from "../components/Form";
-import { useProjects } from "../hooks/useProjects";
 import { useEffect } from "react";
+
+import { projectService } from "@/services/api";
+import type { ProjectData } from "@/types";
+import { useProjects } from "@/hooks/useProjects";
+
 import { toast } from "react-hot-toast";
-import { projectService } from "../services/api";
-import type { ProjectData } from "../types";
-import { ProjectCard } from "../components/ProjectCard";
+import { Rocket } from "lucide-react";
+import { Button } from "@/components/Button";
+import { Form } from "@/components/Form";
+import { ProjectCard } from "@/components/ProjectCard";
 
 export const Home = () => {
 	const { projects, loading, error, fetchProjects, deleteProject } =
