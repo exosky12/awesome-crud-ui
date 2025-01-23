@@ -1,72 +1,72 @@
 # AwesomeCRUD
 
-**AwesomeCRUD** est une application web qui permet de gérer des projets avec des opérations de création, lecture, mise à jour et suppression (CRUD). Cette application utilise React pour l'interface utilisateur et une API pour la gestion des données.
+**AwesomeCRUD** is a web application that allows you to manage projects with create, read, update, and delete (CRUD) operations. This app uses React for the user interface and an API for data management.
 
-## Fonctionnalités
+## Features
 
-- **Afficher la liste de tous les projets** : Visualisez tous les projets créés.
-- **Créer un projet** : Ajoutez un nouveau projet avec un nom et une description.
-- **Mettre à jour un projet** : Modifiez le nom et la description d'un projet existant.
-- **Supprimer un projet** : Retirez un projet de la liste.
-- **Afficher un projet** : Consultez les détails d'un projet spécifique.
+- **View all projects**: Display the list of all created projects.  
+- **Create a project**: Add a new project with a name and description.  
+- **Update a project**: Modify the name and description of an existing project.  
+- **Delete a project**: Remove a project from the list.  
+- **View project details**: Access detailed information about a specific project.  
 
-## Installation du projet
+## Project Setup
 
-### Prérequis
+### Prerequisites
 
-- Node.js version 20 ou supérieure
+- Node.js version 20 or later
 
-### Étapes d'installation
+### Installation Steps
 
-1. **Clonez le front** :
+1. **Clone the frontend repository**:
 
-```bash
-git clone https://github.com/exosky12/awesome-crud-ui.git
-cd awesome-crud-ui
-```
+    ```bash
+    git clone https://github.com/exosky12/awesome-crud-ui.git
+    cd awesome-crud-ui
+    ```
 
-2. **Installez les dépendances** :
+2. **Install dependencies**:
 
-```bash
-pnpm install
-```
+    ```bash
+    pnpm install
+    ```
 
-Pour démarrer l'application, exécutez la commande suivante :
+3. **Start the application**:
 
-```bash
-pnpm run dev
-```
+    ```bash
+    pnpm run dev
+    ```
 
-L'application sera disponible à l'adresse suivante : [http://localhost:5173](http://localhost:5173)
+    The application will be available at: [http://localhost:5173](http://localhost:5173)
 
-3. **Clonez l'api** :
+4. **Clone the API repository**:
 
-```bash
-git clone https://github.com/BearStudio/basic-crud-exercise.git
-cd basic-crud-exercise
-```
+    ```bash
+    git clone https://github.com/BearStudio/basic-crud-exercise.git
+    cd basic-crud-exercise
+    ```
 
-4. **Installez les dépendances** :
+5. **Install dependencies**:
 
-```bash
-pnpm install
-```
+    ```bash
+    pnpm install
+    ```
 
-5. **Créer la db** :
+6. **Create the database**:
 
-```bash
-pnpm db:push
-```
+    ```bash
+    pnpm db:push
+    ```
 
-## Lancer l'API
+## Start the API
 
-Pour démarrer l'API, exécutez la commande suivante :
+To start the API, run:
 
 ```bash
 pnpm dev:api
 ```
 
-L'API sera disponible à l'adresse suivante : [http://localhost:4000/api/v1](http://localhost:4000/api/v1)
+The API will be available at : [http://localhost:4000/api/v1](http://localhost:4000/api/v1)
 
 ## API documentation
 
