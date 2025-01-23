@@ -37,7 +37,7 @@ export const Form = ({ onSubmit }: FormProps) => {
 	const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault();
 
-		if (!formData.name.trim()) {
+		if (formData.name == "") {
 			setError("Project name is required");
 			return;
 		}

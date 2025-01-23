@@ -15,7 +15,6 @@ type ProjectCardProps = {
 	) => void;
 	onClick?: () => void;
 };
-
 export const ProjectCard = ({
 	project,
 	onDelete,
@@ -68,9 +67,8 @@ export const ProjectCard = ({
 					<Edit />
 				</button>
 			</div>
-
 			<Modal isOpen={isEditing} onClose={() => setIsEditing(false)}>
-				<div onClick={(e) => e.stopPropagation()}>
+				<div className="flex flex-col" onClick={(e) => e.stopPropagation()}>
 					<input
 						type="text"
 						value={name}

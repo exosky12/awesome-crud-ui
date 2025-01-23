@@ -28,25 +28,27 @@ export const projectService = {
 	},
 
 	async create(data: ProjectData) {
+		/*
+		const projects = await fetch(`${API_URL}/projects`)
+			.then((res) => res.json())
+			.then((data) => data.data);
+		const duplicate = projects.find(
+			(project: ProjectData) =>
+				project.name.toLowerCase() === data.name.toLowerCase()
+		);
+		if (duplicate) throw new Error("Project name already exists");
+*/
 		const response = await fetch(`${API_URL}/projects`, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(data),
 		});
+
 		if (!response.ok) {
 			throw new Error("Failed to create project");
 		}
-		return handleResponse(response);
-	},
 
-	async delete(id: string) {
-		const response = await fetch(`${API_URL}/projects/${id}`, {
-			method: "DELETE",
-		});
-		if (!response.ok) {
-			throw new Error("Failed to delete project");
-		}
-		return response.status === 204 ? true : handleResponse(response);
+		return handleResponse(response);
 	},
 
 	async update(id: string, data: ProjectData) {
@@ -59,5 +61,15 @@ export const projectService = {
 			throw new Error("Failed to update project");
 		}
 		return handleResponse(response);
+	},
+
+	async delete(id: string) {
+		const response = await fetch(`${API_URL}/projects/${id}`, {
+			method: "DELETE",
+		});
+		if (!response.ok) {
+			throw new Error("Failed to delete project");
+		}
+		return response.status === 204 ? true : handleResponse(response);
 	},
 };

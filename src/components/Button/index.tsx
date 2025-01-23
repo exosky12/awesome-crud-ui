@@ -1,8 +1,11 @@
+import type { FormEvent } from "react";
+
 type ButtonProps = {
 	name: string;
 	icon?: React.ReactNode;
 	href?: string;
-	onClick?: () => void;
+	style?: string;
+	onClick?: (e?: FormEvent) => void;
 	type?: "button" | "submit" | "reset";
 };
 
@@ -11,6 +14,7 @@ export const Button = ({
 	icon,
 	href,
 	onClick,
+	style,
 	type = "button",
 }: ButtonProps) => {
 	const baseStyle =
@@ -18,7 +22,7 @@ export const Button = ({
 
 	if (href) {
 		return (
-			<a href={href} onClick={onClick} className={baseStyle}>
+			<a href={href} onClick={onClick} className={`${baseStyle} ${style}`}>
 				{icon}
 				{name}
 			</a>
@@ -26,7 +30,7 @@ export const Button = ({
 	}
 
 	return (
-		<button type={type} onClick={onClick} className={baseStyle}>
+		<button type={type} onClick={onClick} className={`${baseStyle} ${style}`}>
 			{icon}
 			{name}
 		</button>

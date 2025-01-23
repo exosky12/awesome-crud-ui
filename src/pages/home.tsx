@@ -35,6 +35,7 @@ export const Home = () => {
 			toast.error(
 				error instanceof Error ? error.message : "Failed to create project"
 			);
+			throw new Error();
 		}
 	};
 
