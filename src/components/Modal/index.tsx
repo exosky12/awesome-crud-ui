@@ -16,7 +16,7 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
 			<div className="w-full p-6 rounded-lg">
 				{children}
 				<Button
-					style="w-full mt-2 bg-red-500"
+					style="w-full mt-2 !bg-red-500"
 					name="Cancel"
 					icon={<X />}
 					onClick={(e) => {
